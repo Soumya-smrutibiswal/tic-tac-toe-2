@@ -1,0 +1,232 @@
+/* Responsive Design */
+@media (max-width: 500px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+*/ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-container {
+    position: relative;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1.2s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.status {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.board {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: cellEnter 0.5s ease forwards;
+}
+
+@keyframes cellEnter {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.cell.X {
+    color: #007bff;
+    animation: zoomIn 0.3s ease;
+}
+
+.cell.O {
+    color: #ff4d4d;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+.win-line {
+    position: absolute;
+    height: 5px;
+    background-color: #00cc66;
+    width: 0;
+    top: 0;
+
+    transform-origin: left center;
+    transition: all 0.5s ease;
+    z-index: 10;
+}
+
+.win-line {
+    position: absolute;
+    height: 5px;
+    background-color: #00cc66;
+    width: 0;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transition: width 0.5s ease, transform 0.5s ease, top 0.3s ease, left 0.3s ease;
+    z-index: 10;
+}
+
+.win-line {
+    background-color: rgba(0, 255, 0, 0.6);
+    /* Light green, semi-transparent */
+}
+
+/* Mobile responsiveness for phones */
+@media (max-width: 500px) {
+    .board {
+        grid-template-columns: repeat(3, 70px);
+        grid-gap: 6px;
+    }
+
+    .cell {
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+
+    .game-container {
+        padding: 20px;
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .win-line {
+        height: 4px;
+    }
+}
